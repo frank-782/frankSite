@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <title>{% block title %}{%endblock%}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.0/dist/css/mdui.min.css"/>
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+</head>
+<body class='mdui-theme-layout-auto mdui-appbar-with-tab-larger'>
+<script src="https://cdn.jsdelivr.net/npm/mdui@1.0.0/dist/js/mdui.min.js"></script>
+{# Start Nav #}
+<div class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide">
+  <div class="mdui-tab mdui-color-theme" mdui-tab>
+    <a href="/" class="mdui-ripple mdui-ripple">
+        <i class="mdui-icon material-icons">home</i>
+        主页
+    </a>
+    <a href="/blogs/" class="mdui-ripple mdui-ripple">
+        <i class="mdui-icon material-icons">wallpaper</i>
+        博客
+    </a>
+    <a href="/forum/" class="mdui-ripple mdui-ripple">
+        <i class="mdui-icon material-icons">question_answer</i>
+        论坛
+    </a>
+  </div>
+</div>
+
+<div class="mdui-container">
+    {%block body %}{%endblock%}
+</div>
+
+
+{% if messages %}
+<script>
+    {% for msg in messages %}
+        {% if msg.level == 20 %}
+        mdui.snackbar({message:'{{ msg.message }}'});
+        {% elif msg.level == 40 %}
+        mdui.dialog({
+            title: '错误',
+            content: '{{ msg.message }}',
+            history: false,
+            buttons: [{
+                text: '好的'
+            }]
+        })
+        {% else %}
+        mdui.alert('{{ msg.message }}')
+        {% endif %}
+    {% endfor %}
+</script>
+{% endif %}
+</body>
+</html>

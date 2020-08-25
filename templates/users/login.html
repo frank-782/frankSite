@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}登录您的账号{% endblock title %}
+{% block body%}
+<div class="mdui-typo">
+    <h1>登录您的账号</h1>
+    <div class="mdui-divider"></div>
+    <form method='post' action='/users/login/'>
+        <div class="mdui-textfield mdui-textfield-floating-label">
+        <i class="mdui-icon material-icons">account_circle</i>
+        <label class="mdui-textfield-label">用户名</label>
+        <input class="mdui-textfield-input" type="text" name="username" required/>
+        <div class="mdui-textfield-error">请输入用户名</div>
+        </div>
+
+        <div class="mdui-textfield mdui-textfield-floating-label">
+        <i class="mdui-icon material-icons">lock</i>
+        <label class="mdui-textfield-label">密码</label>
+        <input class="mdui-textfield-input" type="password" name="password" required>
+        <div class="mdui-textfield-error">请输入密码</div>
+        </div>
+        <button type="submit" class="mdui-btn mdui-color-blue-accent mdui-ripple">登录</button>
+        &nbsp;&nbsp;&nbsp;<a href="/users/forgotpassword/">忘记密码？</a>
+        {% csrf_token %}
+        {% if next %}
+        <input type="hidden" name="next" value="{{ next }}">
+        {% endif %}
+    </form>
+</div>
+{% endblock body %}

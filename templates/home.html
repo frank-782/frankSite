@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{%block body%}
+<div class='mdui-col-sm-12 mdui-col-md-12'>
+    <div class="mdui-card">
+    <div class="mdui-card-media">
+        <img src="https://cdn.w3cbus.com/mdui.org/docs/assets/docs/img/card.jpg"/>
+        <div class="mdui-card-media-covered">
+        <div class="mdui-card-primary">
+            <div class="mdui-card-primary-title">hi</div>
+            <div class="mdui-card-primary-subtitle">欢迎来到frank的小站</div>
+        </div>
+        <div class="mdui-card-actions">
+            <button class="mdui-btn mdui-ripple mdui-ripple-white" onClick="location.href='/users/register/'">创建账号</button>
+            <button class="mdui-btn mdui-ripple mdui-ripple-white" onClick="location.href='/users/login/'">登录</button>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+{% endblock  %}

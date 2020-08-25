@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}注册账号{% endblock title %}
+{% block body%}
+<div class="mdui-typo">
+    <h1>注册账号</h1>
+    <div class="mdui-divider"></div>
+    <form method='post' action='/users/register/'>
+        <div class="mdui-textfield mdui-textfield-floating-label">
+            <i class="mdui-icon material-icons">account_circle</i>
+            <label class="mdui-textfield-label">用户名</label>
+            <input class="mdui-textfield-input" type="text" name="username" required/>
+            <div class="mdui-textfield-error">请输入用户名</div>
+        </div>
+
+        <div class="mdui-textfield mdui-textfield-floating-label">
+            <i class="mdui-icon material-icons">email</i>
+            <label class="mdui-textfield-label">邮箱</label>
+            <input class="mdui-textfield-input" type="email" name="email" required/>
+            <div class="mdui-textfield-error">请输入正确的邮箱地址！</div>
+        </div>
+
+        <div class="mdui-textfield mdui-textfield-floating-label">
+            <i class="mdui-icon material-icons">lock</i>
+            <label class="mdui-textfield-label">密码</label>
+            <input class="mdui-textfield-input" type="password" name="password" minlength="6" required>
+            <div class="mdui-textfield-error">密码必须大于6位</div>
+        </div>
+
+        <div class="mdui-textfield mdui-textfield-floating-label">
+            <i class="mdui-icon material-icons">lock</i>
+            <label class="mdui-textfield-label">确认密码</label>
+            <input class="mdui-textfield-input" type="password" name="repassword" required>
+            <div class="mdui-textfield-error">请再次输入密码</div>
+        </div>
+
+        <button type="submit" class="mdui-btn mdui-color-blue-accent mdui-ripple">注册</button>
+        &nbsp;&nbsp;&nbsp;<a href="/users/login/">已有账号？前往登录</a>
+        {% csrf_token %}
+    </form>
+</div>
+{% endblock body %}
