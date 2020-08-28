@@ -16,9 +16,14 @@ def login(request):
         if user is None:
             messages.error(request,'用户名或密码错误')
             return redirect('/users/login/')
+        auth.login(request,user)
+        if request.GET.get('next'):
+            return redirect(next)
+        else:
+            return redirect('/')
     if request.user.is_authenticated:
         messages.info(request,'你已经登录了'+request.user.username+'，可通过此表单登录其他账号')
-    return render(request,'users/login.html',{'next':request.GET.get('next')})
+    return render(request,'users/login.html',{'next': request.GET.get('next'), 'component_name': 'usersLogin'})
 
 def register(request):
     if request.method == 'POST':

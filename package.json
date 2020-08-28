@@ -5,7 +5,7 @@
   "repository": "https://github.com/frank-782/frankSite",
   "author": "frank <frank_782@qq.com>",
   "license": "MIT",
-  "private": true, 
+  "private": true,
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack"
@@ -13,10 +13,13 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
+    "dayjs": "^1.8.34",
     "lodash.bindall": "^4.4.0",
+    "markdown-it": "^11.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "style-loader": "^1.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",

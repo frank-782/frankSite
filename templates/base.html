@@ -1,14 +1,17 @@
-<!DOCTYPE html>
+{% load static %}<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <title>{% block title %}{%endblock%}</title>
+    {% block head %}{%endblock%}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ionicons@4.4.6/dist/css/ionicons.min.css">
+    <link rel="stylesheet" href="{% static "/css/github-markdown.css" %}"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.0/dist/css/mdui.min.css"/>
     <meta name="renderer" content="webkit"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 </head>
-<body class='mdui-theme-layout-auto mdui-appbar-with-tab-larger'>
+<body class='mdui-appbar-with-tab-larger'>
 <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.0/dist/js/mdui.min.js"></script>
 {# Start Nav #}
 <div class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide">
@@ -53,6 +56,21 @@
     {% endfor %}
 </script>
 {% endif %}
-<script src="/static/build/main.js"></script>
+
+
+<script>{% if component_name %}
+var component_name = "{{ component_name }}"{% endif %}
+{% if component_props %}
+var component_props = {{ component_props | safe }}{% endif %}
+{% if user_session %}
+var user_session = {{ user_session | safe }}
+{% else %}
+var user_session = {}
+{% endif %}
+</script>
+<script src="{% static "/build/common.js" %}"></script>
+<script src="{% static "/build/react.js" %}"></script>
+<script src="{% static "/build/icons.js" %}"></script>
+<script src="{% static "/build/main.js" %}"></script>
 </body>
 </html>
