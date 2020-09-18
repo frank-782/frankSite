@@ -1,2 +1,2 @@
 django==3.0.8
-django-material==1.6.7
+markdown==3.2.2
