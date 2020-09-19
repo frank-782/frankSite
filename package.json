@@ -13,7 +13,7 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
-    "dayjs": "^1.8.34",
+    "dayjs": "^1.8.36",
     "lodash.bindall": "^4.4.0",
     "markdown-it": "^11.0.0",
     "prop-types": "^15.7.2",
