@@ -15,7 +15,7 @@
     "@material-ui/icons": "^4.9.1",
     "dayjs": "^1.8.34",
     "lodash.bindall": "^4.4.0",
-    "markdown-it": "^11.0.0",
+    "markdown-it": "^11.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
