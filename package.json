@@ -11,7 +11,7 @@
     "build": "webpack"
   },
   "dependencies": {
-    "@material-ui/core": "^4.11.0",
+    "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.9.1",
     "dayjs": "^1.8.34",
     "lodash.bindall": "^4.4.0",
